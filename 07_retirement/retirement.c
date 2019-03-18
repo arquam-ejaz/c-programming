@@ -5,13 +5,13 @@ struct _retire_info
 {
   int months;
   double contribution;
-  double rate_of_retrun;
+  double rate_of_return;
 };
 typedef struct _retire_info retire_info;
 
 double calculation(retire_info r, double initial)
 {
-  initial+=initial*r.rate_of_retrun + r.contribution;
+  initial+=initial*r.rate_of_return + r.contribution;
   return initial;
 }
 
@@ -41,12 +41,12 @@ int main()
   retire_info working;
   working.months=489;
   working.contribution=1000;
-  working.rate_of_retrun=0.045/12;
+  working.rate_of_return=0.045/12;
 
   retire_info retired;
   retired.months=384;
   retired.contribution=-4000;
-  retired.rate_of_retrun=0.01/12;
+  retired.rate_of_return=0.01/12;
   retirement(startAge, initial, working, retired);
   return 0;
 }
